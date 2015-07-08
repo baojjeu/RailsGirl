@@ -4,7 +4,13 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all
+    # @ideas = Idea.all
+    #Search
+    if params[:search]
+        @ideas = Idea.where('name LIKE ?', "%#{params[:search]}%")
+    else
+        @ideas = Idea.all
+    end
   end
 
   # GET /ideas/1
@@ -73,4 +79,5 @@ class IdeasController < ApplicationController
     def idea_params
       params.require(:idea).permit(:name, :description, :text, :picture)
     end
+
 end
