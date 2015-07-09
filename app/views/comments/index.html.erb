@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
       <th>User name</th>
       <th>Body</th>
       <th>Idea</th>
@@ -16,7 +15,6 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.user_id %></td>
         <td><%= comment.user_name %></td>
         <td><%= comment.body %></td>
         <td><%= comment.idea_id %></td>
